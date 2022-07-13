@@ -1,1 +1,1 @@
-https://lytical.github.io
+https://lytical.app/
