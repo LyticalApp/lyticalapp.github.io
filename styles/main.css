@@ -272,7 +272,6 @@ body {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     position: absolute;
-    top: 45%;
     left: 0;
     right: 0;
     margin: 0 auto
