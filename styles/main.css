@@ -331,10 +331,12 @@ body {
 }
 
 .presentation .screen_presentation img {
-    height: 400px
+    max-width: 40%;
+    height: auto;
+    width: auto;
 }
 
-@media screen and (max-width:830px) {
+@media screen and (max-width:800px) {
     .presentation {
         height: 100%
     }
