@@ -84,6 +84,10 @@ a {
     border-radius: 3px
 }
 
+.hideMultisearch {
+    display:none;
+}
+
 @media all and (min-width:900px) {
     .menu {
         justify-content: space-evenly
@@ -131,6 +135,10 @@ a {
 
     .toggle {
         display: none
+    }
+
+    .hideMultisearch {
+        display:inline;
     }
 
     .submenu-active {
