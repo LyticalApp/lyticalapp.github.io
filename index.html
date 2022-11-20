@@ -38,7 +38,6 @@
     <link rel="icon" type="image/x-icon" href="./favicon.ico">
     <title>Lytical - Open Source League of Legends Statistics and Profile Analytics</title>
     <link rel="stylesheet" href="styles/main.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
 </head>
@@ -83,18 +82,16 @@
             </div>
             <!-- Right Box -->
             <div style="max-width:450px;padding:0 40px 0 40px;">
-                <h2>Match History & Lobby Multisearch</h2>
+                <h2>Match History & In-game Multisearch</h2>
                 <p> Lytical provides fast OP.GG style match history for any player.
                     Kills, CS per Minute, Vision Score, and Objectives.
                     Analyze your contribution to your own games or search high ranked players to increase your impact
                     and win more games!
                     <br><br>
-                    Multisearch will automatically scout your teammates in champion select and your opponents when in
-                    game. Profile lookup tools are common on NA/EU/KR servers to help avoid poor quality games. Lytical
-                    is the tool for the job to quickly understand your teammates and opponents strengths and weaknesses.
+                    In-Game Multisearch can help quickly understand your teammates and opponents strengths and weaknesses.
                     <br>
                     <br>
-                    <img class="multisearch hideMultisearch" src="images/Multisearch.png" alt="Multisearch">
+                    <img class="multisearch hideMultisearch" src="images/ingame-search.png" alt="Multisearch">
                 </p>
             </div>
             <br>
@@ -242,6 +239,7 @@
         const toggle = document.querySelector(".toggle");
         const menu = document.querySelector(".menu");
         const items = document.querySelectorAll(".item");
+        const backtotop = document.getElementById("backtotop");
 
         /* Toggle mobile menu */
         function toggleMenu() {
@@ -278,6 +276,7 @@
                 }
             }
         }
+
         /* Event Listeners */
         toggle.addEventListener("click", toggleMenu, false);
         for (let item of items) {
@@ -287,13 +286,7 @@
             item.addEventListener("keypress", toggleItem, false);
         }
         document.addEventListener("click", closeSubmenu, false);
-        document.getElementById("backtotop")
-            .addEventListener("click",
-                function () {
-                    $("html, body").animate(
-                        { scrollTop: "0" }, 200);
-                }
-            )
+        backtotop.addEventListener("mousedown",function(){window.scrollTo(0, 0)})
     </script>
 </body>
 

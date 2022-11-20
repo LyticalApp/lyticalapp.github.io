@@ -7,7 +7,9 @@
 body {
     overflow-x: hidden;
     font-family: sans-serif;
-    font-size: 16px
+    font-size: 16px;
+    margin: 0;
+    background: #333
 }
 
 nav {
@@ -36,11 +38,6 @@ a {
 
 .item {
     padding: 10px
-}
-
-.item a:hover::after,
-.item:not(.button) a:hover {
-    color: #ccc
 }
 
 .menu {
@@ -88,6 +85,10 @@ a {
     display:none;
 }
 
+.multisearch {
+    width: 400px;
+}
+
 @media all and (min-width:900px) {
     .menu {
         justify-content: space-evenly
@@ -125,14 +126,6 @@ a {
         width: auto
     }
 
-    .submenu-active .submenu {
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 68px;
-        background: #111
-    }
-
     .toggle {
         display: none
     }
@@ -141,19 +134,13 @@ a {
         display:inline;
     }
 
-    .submenu-active {
-        border-radius: 0
-    }
 }
 
 html {
+    scroll-behavior: smooth;
     font-family: sans-serif;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
-}
-
-body {
-    margin: 0
 }
 
 figure,
@@ -165,17 +152,8 @@ section {
     display: block
 }
 
-[hidden] {
-    display: none
-}
-
 a {
     background-color: transparent
-}
-
-a:active,
-a:hover {
-    outline: 0
 }
 
 b,
@@ -196,25 +174,6 @@ figure {
     margin: 1em 40px
 }
 
-code {
-    font-family: monospace, monospace;
-    font-size: 1em
-}
-
-select {
-    color: inherit;
-    font: inherit;
-    margin: 0
-}
-
-select {
-    text-transform: none
-}
-
-th {
-    padding: 0
-}
-
 * {
     box-sizing: border-box;
     -moz-box-sizing: border-box
@@ -230,10 +189,6 @@ body {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     color: #fff
-}
-
-.icon {
-    display: inline-block
 }
 
 .presentation {
@@ -285,6 +240,10 @@ body {
     margin: 0 auto
 }
 
+.presentation .cta .download:hover {
+    opacity: .9
+}
+
 .presentation .cta .download {
     display: block;
     width: 200px;
@@ -309,10 +268,6 @@ body {
     margin-right: 3px
 }
 
-.presentation .cta .download:hover {
-    opacity: .9
-}
-
 .presentation .cta .all,
 .presentation .cta .fork {
     color: #fff;
@@ -322,11 +277,6 @@ body {
     border-bottom: dotted 2px #86888f;
     cursor: pointer;
     transition: all .3s ease
-}
-
-.presentation .cta .all:hover,
-.presentation .cta .fork:hover {
-    border-color: #fff
 }
 
 .presentation .screen_presentation {
@@ -372,158 +322,12 @@ body {
     }
 }
 
-body {
-    background: #333
-}
-
 *,
 :after,
 :before {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box
-}
-
-@-webkit-keyframes mouse-wheel {
-    0% {
-        opacity: 1;
-        -webkit-transform: translateY(0);
-        -ms-transform: translateY(0);
-        transform: translateY(0)
-    }
-
-    100% {
-        opacity: 0;
-        -webkit-transform: translateY(6px);
-        -ms-transform: translateY(6px);
-        transform: translateY(6px)
-    }
-}
-
-@-moz-keyframes mouse-wheel {
-    0% {
-        top: 1px
-    }
-
-    25% {
-        top: 2px
-    }
-
-    50% {
-        top: 3px
-    }
-
-    75% {
-        top: 2px
-    }
-
-    100% {
-        top: 1px
-    }
-}
-
-@-o-keyframes mouse-wheel {
-    0% {
-        top: 1px
-    }
-
-    25% {
-        top: 2px
-    }
-
-    50% {
-        top: 3px
-    }
-
-    75% {
-        top: 2px
-    }
-
-    100% {
-        top: 1px
-    }
-}
-
-@keyframes mouse-wheel {
-    0% {
-        top: 1px
-    }
-
-    25% {
-        top: 2px
-    }
-
-    50% {
-        top: 3px
-    }
-
-    75% {
-        top: 2px
-    }
-
-    100% {
-        top: 1px
-    }
-}
-
-@-webkit-keyframes mouse-scroll {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: .5
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
-@-moz-keyframes mouse-scroll {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: .5
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
-@-o-keyframes mouse-scroll {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: .5
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
-@keyframes mouse-scroll {
-    0% {
-        opacity: 0
-    }
-
-    50% {
-        opacity: .5
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
-.faq {
-    background-color: #111
 }
 
 .download {
@@ -556,7 +360,7 @@ footer {
  *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
-@font-face {
+ @font-face {
     font-family: FontAwesome;
     src: url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0);
     src: url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0) format('embedded-opentype'), url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0) format('woff2'), url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0) format('woff'), url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0) format('truetype'), url(https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular) format('svg');
@@ -574,70 +378,6 @@ footer {
     transform: translate(0, 0)
 }
 
-.fa-2x {
-    font-size: 2em
-}
-
-.fa-3x {
-    font-size: 3em
-}
-
-.fa-4x {
-    font-size: 4em
-}
-
-.fa-5x {
-    font-size: 5em
-}
-
-.fa-ul {
-    padding-left: 0;
-    margin-left: 2.14285714em;
-    list-style-type: none
-}
-
-.fa-ul>li {
-    position: relative
-}
-
-.fa-li {
-    position: absolute;
-    left: -2.14285714em;
-    width: 2.14285714em;
-    top: .14285714em;
-    text-align: center
-}
-
-.fa-border {
-    padding: .2em .25em .15em;
-    border: solid .08em #eee;
-    border-radius: .1em
-}
-
-@-webkit-keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0);
-        transform: rotate(0)
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg)
-    }
-}
-
-@keyframes fa-spin {
-    0% {
-        -webkit-transform: rotate(0);
-        transform: rotate(0)
-    }
-
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg)
-    }
-}
-
 .fa-bars:before {
     content: "\f0c9"
 }
@@ -650,36 +390,4 @@ footer {
 .fa-remove:before,
 .fa-times:before {
     content: "\f00d"
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 400;
-    font-stretch: normal;
-    src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600;
-    font-stretch: normal;
-    src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 700;
-    font-stretch: normal;
-    src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1x4gaVc.ttf) format('truetype')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 800;
-    font-stretch: normal;
-    src: url(https://fonts.gstatic.com/s/opensans/v29/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1x4gaVc.ttf) format('truetype')
 }
